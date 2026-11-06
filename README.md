@@ -152,8 +152,8 @@ Interested in Artificial Intelligence, Machine Learning, Data Science, Mathemati
 ## Connect With Me
 
 - **GitHub:** https://github.com/AlwinVJ
-- **LinkedIn:** [Add LinkedIn Profile]
-- **Portfolio:** [Add Deployed Website URL]
+- **LinkedIn:** www.linkedin.com/in/alwinvj
+- **Portfolio:** https://alwinvj.github.io/alwin-vj-portfolio/
 - **Email:** alwinvj05@gmail.com
 
 ---
