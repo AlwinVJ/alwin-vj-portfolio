@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F5F7F5;
+    --bg-card: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+    --color-accent: #15803D;
+    --color-accent-hover: #166534;
+    --border-color: #E5E7EB;
+
+    --portrait-highlight: #111827;
+    --portrait-mid: #374151;
+    --portrait-shadow: #6B7280;
+    --portrait-particle: #9CA3AF;
+  }
+
+  .dark, [data-theme="dark"] {
+    --bg-main: #020D08;
+    --bg-secondary: #04150C;
+    --bg-card: #061A10;
+    --text-primary: #D8FFE8;
+    --text-secondary: #B8DCC8;
+    --text-muted: #83A995;
+    --color-accent: #00E676;
+    --color-accent-hover: #00FF88;
+    --border-color: rgba(0, 230, 118, 0.25);
+
+    --portrait-highlight: #00FF88;
+    --portrait-mid: #00E676;
+    --portrait-shadow: #009E4F;
+    --portrait-particle: #00FF88;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-[#FFFFFF] text-[#111827] dark:bg-[#020D08] dark:text-[#B8DCC8] font-mono;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-[#00E676]/30 text-[#00FF88] dark:bg-[#00E676]/30 dark:text-[#00FF88];
+  }
+}
+
+/* Custom scrollbar matching green technical terminal feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(0, 230, 118, 0.25);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 230, 118, 0.45);
+}
+
+/* 
+  Asymmetric Desktop Outer Margins:
+  - On mobile & tablet (< 1200px): Centered layout with equal margins.
+  - On desktop (>= 1200px): Reduced left outer margin and transferred freed space to the right,
+    giving the Education timeline ample whitespace from the right viewport edge while keeping
+    the social sidebar safely in the left gutter.
+*/
+:root {
+  --portfolio-left-margin: auto;
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --portfolio-left-margin: max(4.5rem, calc((100vw - 1200px) * 0.18 + 4.5rem));
+  }
+
+  .portfolio-desktop-container {
+    margin-left: var(--portfolio-left-margin) !important;
+    margin-right: auto !important;
+  }
+}
