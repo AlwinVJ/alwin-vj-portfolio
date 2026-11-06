@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), githubPagesHelper()],
     // Production base path defaults to /portfolio/ for GitHub Pages project sites,
     // and / for local development or custom domain deployments.
-    base: env.VITE_BASE_PATH || (mode === 'production' ? '/portfolio/' : '/'),
+    base: env.VITE_BASE_PATH || (mode === 'production' ? '/alwin-vj-portfolio/' : '/'),
     build: {
       outDir: 'dist',
       assetsDir: 'assets',
