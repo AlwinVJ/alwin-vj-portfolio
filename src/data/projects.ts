@@ -1,118 +1,61 @@
 export interface ProjectItem {
   id: string;
   title: string;
+  category: string;
   description: string;
-  technologies?: string;
-  date: string;
-  link?: string;
-  repoUrl?: string;
-  demoUrl?: string;
+  features: string[];
+  technologies: string[];
+  liveDemoUrl: string;
+  githubUrl: string;
 }
 
-export interface ProjectsData {
-  mainProject: ProjectItem;
-  groupProjects: ProjectItem[];
-  miniAiProjects: ProjectItem[];
-  otherMiniProjects: ProjectItem[];
-}
-
-export const projectsData: ProjectsData = {
-  mainProject: {
-    id: 'mealmate',
-    title: 'MealMate — AI Meal Planning Platform',
-    description: 'AI powered meal planner with personalized meal plans, grocery list and rewards.',
-    date: 'November 2024 – Present',
-    link: '#',
-    repoUrl: 'https://github.com/alwinvj/mealmate',
-    demoUrl: '#mealmate-demo',
+export const projects: ProjectItem[] = [
+  {
+    id: 'aideo',
+    title: 'AIdeo — AI-Powered Video Background Editor',
+    category: 'AI / Computer Vision',
+    description:
+      'An AI-powered video editing application that allows users to modify video backgrounds while preserving the foreground subject.',
+    features: [
+      'Apply background blur with adjustable intensity.',
+      'Replace video backgrounds with white or custom images.',
+      'Use AI-based person segmentation to separate subjects from backgrounds.',
+      'Preview processed videos and download the final output while preserving audio.',
+    ],
+    technologies: ['Python', 'Streamlit', 'OpenCV', 'MediaPipe', 'NumPy', 'FFmpeg'],
+    liveDemoUrl: 'https://videoeditor-bg.streamlit.app/',
+    githubUrl: 'https://github.com/AlwinVJ/videoeditor',
   },
-  groupProjects: [
-    {
-      id: 'hired-crm',
-      title: 'HireD CRM & Logistics Platform',
-      description: 'Full stack platform connecting businesses with drivers. Web admin panel, mobile app and FastAPI backend.',
-      technologies: 'React, React Native, FastAPI, PostgreSQL',
-      date: 'October 2024 – Present',
-      link: '#',
-      repoUrl: 'https://github.com/alwinvj/hired-crm',
-    },
-    {
-      id: 'newsverify',
-      title: 'NewsVerify',
-      description: 'News verification system with multi source scraping, social media (Instagram) support and automated fact checking.',
-      technologies: 'Python, LLMs, Web Scraping, Instagram/Social media sources',
-      date: 'September 2025',
-      link: '#',
-      repoUrl: 'https://github.com/alwinvj/newsverify',
-    },
-    {
-      id: 'seekify',
-      title: 'Seekify',
-      description: 'Search and summarize web content using LLMs, web search and RAG.',
-      technologies: 'Python, Streamlit, LangChain, ChromaDB',
-      date: 'August 2024',
-      link: '#',
-      repoUrl: 'https://github.com/alwinvj/seekify',
-    },
-  ],
-  miniAiProjects: [
-    {
-      id: 'ml-pending-bucket',
-      title: 'ML Pending Bucket',
-      description: 'Track and manage pending ML/DS topics after each module review with a simple and clean UI.',
-      date: 'July 2024',
-      link: '#',
-    },
-    {
-      id: 'linear-regression-lab',
-      title: 'Linear Regression Lab',
-      description: 'Interactive visualizations and from-scratch implementations of Linear, Polynomial, Ridge and Lasso Regression.',
-      date: 'June 2024',
-      link: '#',
-    },
-    {
-      id: 'classification-lab',
-      title: 'Classification Lab',
-      description: 'Learn and compare classification models with interactive visualizations and evaluation metrics.',
-      date: 'June 2024',
-      link: '#',
-    },
-  ],
-  otherMiniProjects: [
-    {
-      id: 'resumetailor',
-      title: 'ResumeTailor',
-      description: 'AI resume analyzer and suggestion system.',
-      date: 'May 2024',
-      link: '#',
-    },
-    {
-      id: 'url-shortener',
-      title: 'URL Shortener',
-      description: 'Simple URL shortener with analytics.',
-      date: 'April 2024',
-      link: '#',
-    },
-    {
-      id: 'finance-tracker',
-      title: 'Finance Tracker',
-      description: 'Personal expense tracking and visualization.',
-      date: 'March 2024',
-      link: '#',
-    },
-    {
-      id: 'weather-dashboard',
-      title: 'Weather Dashboard',
-      description: 'Real time weather information using APIs.',
-      date: 'February 2024',
-      link: '#',
-    },
-    {
-      id: 'portfolio-website',
-      title: 'Portfolio Website',
-      description: 'This personal portfolio website.',
-      date: 'January 2024',
-      link: '#',
-    },
-  ],
-};
+  {
+    id: 'machinequest',
+    title: 'MachineQuest — AI & Data Science Blogging Platform',
+    category: 'Full Stack / AI Platform',
+    description:
+      'A technical blogging platform dedicated to publishing and exploring content related to Artificial Intelligence, Machine Learning, Deep Learning, and Data Science.',
+    features: [
+      'Publish and explore technical articles.',
+      'Discover content through categories and search functionality.',
+      'User authentication and authorization.',
+      'Content management dashboards for managing articles and categories.',
+    ],
+    technologies: ['Python', 'Django', 'SQLite', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+    liveDemoUrl: 'https://alwin1996.pythonanywhere.com/',
+    githubUrl: 'https://github.com/AlwinVJ/machinequest',
+  },
+  {
+    id: 'eda-with-python',
+    title: 'EDA with Python — Interactive Data Science Learning Platform',
+    category: 'Interactive Educational Platform',
+    description:
+      'An interactive educational platform designed to teach Exploratory Data Analysis and Data Preprocessing through structured learning resources, datasets, visualizations, and practical projects.',
+    features: [
+      'Structured learning content covering EDA and data preprocessing.',
+      'Explore missing values, outliers, distributions, correlation, and feature engineering.',
+      'Learn through guided explanations, datasets, visualization references, and hands-on projects.',
+      'Organized educational content designed to support practical data science workflows.',
+    ],
+    technologies: ['React', 'TypeScript', 'TanStack Start', 'TanStack Router', 'Tailwind CSS', 'Vite'],
+    liveDemoUrl: 'https://alwinvj.github.io/eda-with-python/',
+    githubUrl: 'https://github.com/AlwinVJ/eda-with-python',
+  },
+];
