@@ -2,6 +2,30 @@ import React from 'react';
 import { Github, Globe } from 'lucide-react';
 import { projects } from '../data/projects';
 
+const renderFeature = (feature: string) => {
+  const match = feature.match(/^\*\*(.*?)\*\*(.*)$/);
+  if (match) {
+    const [, title, description] = match;
+    const isEddie = title.toLowerCase().includes('eddie');
+    return (
+      <>
+        <strong className="font-semibold text-neutral-900 dark:text-[#D8FFE8]">
+          {isEddie ? (
+            <>
+              <span className="text-[#15803D] dark:text-[#00E676] font-bold">Eddie</span>
+              {title.replace(/^Eddie/, '')}
+            </>
+          ) : (
+            title
+          )}
+        </strong>
+        {description}
+      </>
+    );
+  }
+  return feature;
+};
+
 export const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-6 scroll-mt-20">
@@ -38,7 +62,7 @@ export const Projects: React.FC = () => {
                 <ul className="space-y-1.5 pl-4 list-disc list-outside marker:text-[#15803D] dark:marker:text-[#00E676] text-xs sm:text-[13px] text-neutral-600 dark:text-[#B8DCC8] leading-relaxed">
                   {project.features.map((feature, fIdx) => (
                     <li key={fIdx} className="pl-1">
-                      {feature}
+                      {renderFeature(feature)}
                     </li>
                   ))}
                 </ul>

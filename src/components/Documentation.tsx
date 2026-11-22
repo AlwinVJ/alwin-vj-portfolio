@@ -6,10 +6,10 @@ export const Documentation: React.FC = () => {
   return (
     <section id="documentation" className="py-6 scroll-mt-20">
       <h2 className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-[#D8FFE8] font-mono mb-2">
-        Project Documentation
+        Learning Labs & Documentations
       </h2>
       <p className="text-xs sm:text-[13px] text-neutral-600 dark:text-[#B8DCC8] font-mono mb-4">
-        Documentation for selected projects.
+        Documentations covering my learning path in Machine Learning, Data Science, and Computer Science.
       </p>
 
       <ul className="space-y-3 pl-4 list-disc list-outside marker:text-neutral-700 dark:marker:text-[#00E676] font-mono text-xs sm:text-[13px]">
@@ -17,6 +17,8 @@ export const Documentation: React.FC = () => {
           <li key={doc.id} className="pl-1 text-neutral-600 dark:text-[#B8DCC8] leading-relaxed">
             <a
               href={doc.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#15803D] dark:text-[#00E676] font-medium hover:underline dark:hover:text-[#00FF88] inline-flex items-center gap-1.5 group"
             >
               <FileText
@@ -25,10 +27,12 @@ export const Documentation: React.FC = () => {
               />
               <span>{doc.title}</span>
             </a>{' '}
-            – {doc.description}{' '}
-            <span className="text-neutral-500 dark:text-[#83A995] text-[11px] sm:text-xs">
-              ({doc.date})
-            </span>
+            – {doc.topics}
+            {doc.date && (
+              <span className="text-neutral-500 dark:text-[#83A995] text-[11px] sm:text-xs ml-1">
+                ({doc.date})
+              </span>
+            )}
           </li>
         ))}
       </ul>

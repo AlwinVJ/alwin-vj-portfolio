@@ -1,45 +1,38 @@
 export interface DocumentationItem {
   id: string;
   title: string;
-  description: string;
-  date: string;
+  topics: string;
   url: string;
+  date?: string;
 }
 
 export const documentationList: DocumentationItem[] = [
   {
-    id: 'mealmate-docs',
-    title: 'MealMate Docs',
-    description: 'Documentation for our MealMate project.',
-    date: 'October 2024',
-    url: '#',
+    id: 'boosting-lab',
+    title: 'Boosting Lab',
+    topics:
+      'AdaBoost, Gradient Boosting, XGBoost, LightGBM, Weak Learners, Learning Rate, Sequential Ensemble Learning',
+    url: 'https://alwinvj.github.io/Boosting-Lab/',
   },
   {
-    id: 'linear-regression-docs',
-    title: 'Linear Regression Lab Documentation',
-    description: 'Mathematical formulations, derivation notes, and loss function analysis.',
-    date: 'June 2024',
-    url: '#',
+    id: 'classification-lab',
+    title: 'Classification Lab',
+    topics:
+      'Logistic Regression, K-Nearest Neighbors (KNN), Decision Trees, Support Vector Machines (SVM), Classification Metrics, ROC-AUC, Confusion Matrix',
+    url: 'https://alwinvj.github.io/Classification_Lab/',
   },
   {
-    id: 'classification-docs',
-    title: 'Classification Lab Documentation',
-    description: 'Metric analysis, confusion matrices, and ROC curve evaluation guide.',
-    date: 'June 2024',
-    url: '#',
+    id: 'regression-lab',
+    title: 'Regression Lab',
+    topics:
+      'Linear Regression, Polynomial Regression, Ridge Regression, Lasso Regression, Loss Functions, Gradient Descent, Regularization',
+    url: 'https://alwinvj.github.io/Linear_Regression_Lab/',
   },
   {
-    id: 'hired-docs',
-    title: 'HireD Platform Documentation',
-    description: 'Architecture overview, API endpoints, and schema design.',
-    date: 'October 2024',
-    url: '#',
-  },
-  {
-    id: 'newsverify-docs',
-    title: 'NewsVerify Documentation',
-    description: 'Claim extraction pipeline and automated verification workflow.',
-    date: 'September 2025',
-    url: '#',
+    id: 'dsa-python',
+    title: 'DSA with Python',
+    topics:
+      'Arrays, Linked Lists, Stacks, Queues, Hash Tables, Trees, Graphs, Sorting Algorithms, Searching Algorithms',
+    url: 'https://vercel.com/alwii/interactive-python-dsa',
   },
 ];

@@ -9,7 +9,6 @@ import { Projects } from './components/Projects';
 import { Contributions } from './components/Contributions';
 import { Achievements } from './components/Achievements';
 import { Certifications } from './components/Certifications';
-import { Demonstrations } from './components/Demonstrations';
 import { Documentation } from './components/Documentation';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
@@ -76,10 +75,7 @@ export const App: React.FC = () => {
         {/* Certifications */}
         <Certifications />
 
-        {/* Project Demonstration */}
-        <Demonstrations />
-
-        {/* Project Documentation */}
+        {/* Learning Labs & Documentations */}
         <Documentation />
 
         {/* Footer */}
