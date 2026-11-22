@@ -32,9 +32,9 @@ export const Hero: React.FC<HeroProps> = ({
   const resolvedResumePath = resumePath || defaultResumePath;
   return (
     <section id="home" className="pt-6 sm:pt-10 pb-4 scroll-mt-20">
-      <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6 xl:gap-8">
+      <div className="relative flex flex-col lg:flex-row items-center justify-start gap-8 lg:gap-8 xl:gap-10">
         {/* Left Column: Introduction, Buttons, and Social Links */}
-        <div className="flex-1 w-full space-y-4 max-w-xl">
+        <div className="w-full lg:w-[500px] xl:w-[540px] shrink-0 space-y-4.5 sm:space-y-5">
           {/* Name & Title */}
           <div className="flex flex-wrap items-baseline gap-2">
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-[#D8FFE8] font-mono">
@@ -43,13 +43,13 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           {/* Main Headline */}
-          <h2 className="text-base sm:text-lg font-semibold text-neutral-800 dark:text-[#D8FFE8] font-mono leading-snug">
-            Building AI powered solutions for real world problems
+          <h2 className="text-[15px] sm:text-base lg:text-[16px] xl:text-[17px] font-semibold text-neutral-800 dark:text-[#D8FFE8] font-mono leading-snug tracking-tight whitespace-normal sm:whitespace-nowrap">
+            Building AI Solutions That Work in the Real World
           </h2>
 
           {/* Bio Description */}
-          <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-600 dark:text-[#B8DCC8] font-mono">
-            I'm a Data Science and Machine Learning engineer who enjoys turning ideas into useful products. I work on LLM applications, computer vision, data analysis, and full stack development to solve practical problems. I love learning, building, and sharing what I learn through open source and projects.
+          <p className="text-[13px] sm:text-sm lg:text-[14.5px] xl:text-[15px] leading-relaxed text-neutral-600 dark:text-[#B8DCC8] font-mono text-justify">
+            I'm a Data Scientist and Generative AI engineer focused on taking AI from idea to deployment. I work on computer vision, LLM applications and full-stack development, and I'm drawn to forward deployed engineering, where the goal is to understand a real problem, build the solution and put it in people's hands. I learn by building and share what I learn through open-source projects.
           </p>
 
           {/* Action Buttons */}
@@ -83,9 +83,9 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        {/* Center Column: Procedural Code Portrait of Alwin working on laptop */}
-        <div className="shrink-0 flex items-center justify-center pt-2 lg:pt-0">
-          <CodePortrait />
+        {/* Center-Right Column: Theme-specific Profile Image (Moved horizontally towards the right, closer to badges) */}
+        <div className="shrink-0 flex items-center justify-center w-[280px] sm:w-[330px] md:w-[360px] lg:w-[380px] xl:w-[420px] pt-2 lg:pt-0 lg:ml-auto">
+          <CodePortrait className="w-full" />
         </div>
 
         {/* Right Column: Professional Role Badges (Positions above Education timeline location on wide desktop) */}
