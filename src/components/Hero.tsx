@@ -1,7 +1,8 @@
-import React from 'react';
-import { Mail, FileText, Brain, Code2, Cpu, GitPullRequest } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mail, FileText } from 'lucide-react';
 import { CodePortrait } from './CodePortrait';
 import { SocialLinks } from './SocialLinks';
+import { RoleBadges } from './RoleBadges';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -9,35 +10,29 @@ interface HeroProps {
   resumePath?: string;
 }
 
-const roleIndicators = [
-  {
-    title: 'Data Science Learner',
-    icon: Brain,
-  },
-  {
-    title: 'Full Stack Developer',
-    icon: Code2,
-  },
-  {
-    title: 'ML & LLM Builder',
-    icon: Cpu,
-  },
-  {
-    title: 'Open Source Contributor',
-    icon: GitPullRequest,
-  },
-];
-
 export const Hero: React.FC<HeroProps> = ({
   onOpenContact,
   isPastThreshold,
   resumePath,
 }) => {
+  const [isWideDesktop, setIsWideDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Synchronize with the portfolio wide desktop threshold (>= 1600px)
+      setIsWideDesktop(window.innerWidth >= 1600);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const defaultResumePath = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/assets/Alwin_VJ_Resume.pdf`;
   const resolvedResumePath = resumePath || defaultResumePath;
   return (
     <section id="home" className="pt-6 sm:pt-10 pb-4 scroll-mt-20">
-      <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-8 lg:gap-6 xl:gap-8">
+      <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6 xl:gap-8">
         {/* Left Column: Introduction, Buttons, and Social Links */}
         <div className="flex-1 w-full space-y-4 max-w-xl">
           {/* Name & Title */}
@@ -93,24 +88,15 @@ export const Hero: React.FC<HeroProps> = ({
           <CodePortrait />
         </div>
 
-        {/* Right Column: Role Indicators */}
-        <div className="shrink-0 flex flex-col justify-center gap-2.5 w-full sm:w-auto lg:min-w-[210px] select-none">
-          {roleIndicators.map((role) => {
-            const Icon = role.icon;
-            return (
-              <div
-                key={role.title}
-                className="flex items-center gap-3 px-3 py-2 rounded-lg border border-[#E5E7EB] dark:border-[rgba(0,230,118,0.25)] bg-[#F5F7F5] dark:bg-[#061A10]/90 text-neutral-800 dark:text-[#D8FFE8] hover:border-[#15803D] dark:hover:border-[#00FF88] dark:hover:shadow-[0_0_12px_rgba(0,230,118,0.15)] transition-all duration-200 group"
-              >
-                <span className="p-1.5 rounded-md border border-[#E5E7EB] dark:border-[rgba(0,230,118,0.3)] bg-white dark:bg-[rgba(0,230,118,0.08)] text-[#15803D] dark:text-[#00E676] group-hover:scale-105 transition-transform">
-                  <Icon size={14} strokeWidth={2} />
-                </span>
-                <span className="text-xs font-mono font-medium tracking-tight">
-                  {role.title}
-                </span>
-              </div>
-            );
-          })}
+        {/* Right Column: Professional Role Badges (Positions above Education timeline location on wide desktop) */}
+        <div
+          className={`shrink-0 flex flex-col justify-center select-none ${
+            isWideDesktop
+              ? 'absolute left-[calc(100%+2rem)] top-1/2 -translate-y-1/2 z-20 w-64 xl:w-72'
+              : 'w-full sm:w-auto lg:min-w-[210px]'
+          }`}
+        >
+          <RoleBadges />
         </div>
       </div>
 
