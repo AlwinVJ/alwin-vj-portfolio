@@ -9,8 +9,8 @@ import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Contributions } from './components/Contributions';
 import { Achievements } from './components/Achievements';
-import { Certifications } from './components/Certifications';
 import { Documentation } from './components/Documentation';
+import { Faq } from './components/Faq';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
 
@@ -88,11 +88,11 @@ export const App: React.FC = () => {
         {/* Achievements */}
         <Achievements />
 
-        {/* Certifications */}
-        <Certifications />
-
         {/* Learning Labs & Documentations */}
         <Documentation />
+
+        {/* FAQs */}
+        <Faq />
 
         {/* Footer */}
         <Footer onOpenContact={() => setIsContactOpen(true)} />

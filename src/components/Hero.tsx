@@ -44,12 +44,12 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Main Headline */}
           <h2 className="text-[15px] sm:text-base lg:text-[16px] xl:text-[17px] font-semibold text-neutral-800 dark:text-[#D8FFE8] font-mono leading-snug tracking-tight whitespace-normal sm:whitespace-nowrap">
-            Building AI Solutions That Work in the Real World
+            Builder. Problem-solver. Lifelong learner.
           </h2>
 
           {/* Bio Description */}
           <p className="text-[13px] sm:text-sm lg:text-[14.5px] xl:text-[15px] leading-relaxed text-neutral-600 dark:text-[#B8DCC8] font-mono text-justify">
-            I'm a Data Scientist and Generative AI engineer focused on taking AI from idea to deployment. I work on computer vision, LLM applications and full-stack development, and I'm drawn to forward deployed engineering, where the goal is to understand a real problem, build the solution and put it in people's hands. I learn by building and share what I learn through open-source projects.
+            I'm a Data Scientist and AI Engineer who thrives on closing the gap between "it works on my machine" and "it works for everyone." I'm hands-on and curious, and I care about reliable software. I learn in public through open-source labs, turning every project into something others can learn from too.
           </p>
 
           {/* Action Buttons */}

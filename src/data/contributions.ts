@@ -13,6 +13,6 @@ export const projectContributions: ContributionItem[] = [
   {
     id: 'team-projects',
     title: 'Team Projects',
-    description: 'Collaborated in hackathons and team projects including HireD CRM & Logistics Platform.',
+    description: 'Collaborated in hackathons and team projects including HireD CRM & Logistics Platform and Resume Analyzer',
   },
 ];

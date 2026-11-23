@@ -7,7 +7,7 @@ export interface AchievementItem {
 export const achievements: AchievementItem[] = [
   {
     id: 'hackathons',
-    title: 'Hackathon Participation',
-    description: 'Participated in multiple hackathons focusing on AI, ML and full stack development.',
+    title: 'Buildathon Participation',
+    description: 'Participated in multiple buildathons focusing on AI, ML and full stack development.',
   },
 ];
