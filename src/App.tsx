@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { StickySocialSidebar } from './components/StickySocialSidebar';
 import { Skills } from './components/Skills';
 import { Education } from './components/Education';
+import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Contributions } from './components/Contributions';
 import { Achievements } from './components/Achievements';
@@ -63,8 +64,23 @@ export const App: React.FC = () => {
         {/* Education Timeline directly below Technical Skills (Narrow Desktop / Tablet / Mobile) */}
         {!isWideDesktop && <Education isMarginal={false} />}
 
-        {/* Projects */}
-        <Projects />
+        {/* Experience Timeline directly below Education (Narrow Desktop / Tablet / Mobile) */}
+        {!isWideDesktop && <Experience isMarginal={false} />}
+
+        {/* Projects Section with Right Marginal Experience on Wide Desktop */}
+        <div className="relative">
+          <Projects />
+
+          {/* Experience Timeline in Right Margin (Desktop: when right margin has comfortable space) */}
+          {isWideDesktop && (
+            <aside
+              aria-label="Experience timeline"
+              className="absolute left-[calc(100%+2rem)] top-6 z-20"
+            >
+              <Experience isMarginal={true} />
+            </aside>
+          )}
+        </div>
 
         {/* Project Contributions */}
         <Contributions />
