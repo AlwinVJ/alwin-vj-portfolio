@@ -8,25 +8,11 @@ export interface DocumentationItem {
 
 export const documentationList: DocumentationItem[] = [
   {
-    id: 'boosting-lab',
-    title: 'Boosting Lab',
+    id: 'machine-learning-lab',
+    title: 'Machine Learning Lab',
     topics:
-      'AdaBoost, Gradient Boosting, XGBoost, LightGBM, Weak Learners, Learning Rate, Sequential Ensemble Learning',
-    url: 'https://alwinvj.github.io/Boosting-Lab/',
-  },
-  {
-    id: 'classification-lab',
-    title: 'Classification Lab',
-    topics:
-      'Logistic Regression, K-Nearest Neighbors (KNN), Decision Trees, Support Vector Machines (SVM), Classification Metrics, ROC-AUC, Confusion Matrix',
-    url: 'https://alwinvj.github.io/Classification_Lab/',
-  },
-  {
-    id: 'regression-lab',
-    title: 'Regression Lab',
-    topics:
-      'Linear Regression, Polynomial Regression, Ridge Regression, Lasso Regression, Loss Functions, Gradient Descent, Regularization',
-    url: 'https://alwinvj.github.io/Linear_Regression_Lab/',
+      'Regression, Classification, Boosting, K-Means Clustering, Hierarchical Clustering, Random Forest',
+    url: 'https://alwinvj.github.io/machine-learning-labs/',
   },
   {
     id: 'dsa-python',
